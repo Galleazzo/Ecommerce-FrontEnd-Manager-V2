@@ -1,0 +1,37 @@
+<div class="mb-8" fxHide fxShow.lt-md>
+  <youpez-logo class="cursor-pointer" logoWidth="130px"></youpez-logo>
+</div>
+<h1 class="app-expressive-heading-06 mb-1">Sign in</h1>
+<div class="app-body-long-02 mb-8">
+  Don't have an account?
+  <a ibmLink routerLink="../signup">Sign up</a>
+</div>
+<form [formGroup]="formGroup" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+  <div class="app-form">
+    <div class="app-form__item">
+      <ibm-label [helperText]="''" [invalid]="isValid('username')" [invalidText]="'This field is required'">
+        Email address
+        <input formControlName="username" ibmText size="md" [invalid]="isValid('username')" [disabled]="false" theme="light"
+          [placeholder]="'Email address'" [autocomplete]="true">
+      </ibm-label>
+    </div>
+    <div class="app-form__item">
+      <ibm-label [helperText]="''" [invalid]="isValid('password')" [invalidText]="'This field is required'">
+        Password
+        <input type="password" formControlName="password" ibmText size="md" [invalid]="isValid('password')"
+          [disabled]="false" theme="light" [placeholder]="'Password'" [autocomplete]="true">
+      </ibm-label>
+    </div>
+    <div class="app-form__item app-form__item--opts">
+      <div class="flex justify-between items-center">
+        <a ibmLink routerLink="../forgot-password">Forgot password?</a>
+      </div>
+    </div>
+    <div class="app-form__submit">
+      <button type="submit" class="app-ibm-btn-full" ibmButton="primary" size="field">
+        Sign In
+        <svg class="bx--btn__icon" ibmIconArrowRight size="20"></svg>
+      </button>
+    </div>
+  </div>
+</form>
