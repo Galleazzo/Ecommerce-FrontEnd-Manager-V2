@@ -38,9 +38,7 @@ export class AuthLoginComponent implements OnInit {
   }
 
   onSubmit(loginForm: NgForm) {
-    debugger
     this.userService.login(loginForm.value).subscribe((response: any) => {
-        debugger
         this.userAuthService.setToken(response.token);
            
         this.router.navigate(['/app/dashboard/default']);

@@ -1,0 +1,12 @@
+<div fxFill fxLayout="column">
+  <div class="app-header app-header--carbon">
+    <div class="app-productive-heading-04">Produtos</div>
+  </div>
+
+  <div fxFlex class="relative px-4 pb-4 pt-2">
+    <ng-container *ngIf="!loading">
+      <ag-grid-angular class="app-ag-grid app-border-all" [modules]="modules" [gridOptions]="gridOptions">
+      </ag-grid-angular>
+    </ng-container>
+  </div>
+</div>

@@ -35,24 +35,24 @@ export class LayoutComponent implements OnInit, OnDestroy {
       opened: true,
       children: [
         {
-          name: 'Dashboard',
+          name: 'Geral',
           url: '/app/dashboard/default',
           prefix: {
             type: 'ibm-icon',
-            name: 'home',
+            name: 'ChartWaterfall ',
           },
         },
         {
-          name: 'Platform analytics',
+          name: 'Usuarios',
           url: '/app/dashboard/analytics',
           prefix: {
             type: 'ibm-icon',
-            name: 'activity',
+            name: 'user',
           },
         },
         {
-          name: 'Stocks / crypto',
-          url: '/app/dashboard/crypto',
+          name: 'Produtos',
+          url: '/app/dashboard/product',
           prefix: {
             type: 'ibm-icon',
             name: 'analytics',

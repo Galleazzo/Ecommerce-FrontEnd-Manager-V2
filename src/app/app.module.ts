@@ -24,6 +24,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools'
 import {environment} from '../environments/environment'
 import {EffectsModule} from '@ngrx/effects'
 import {AppEffects} from './store/app.effects'
+import { AuthGuard } from './auth/auth.guard'
+import { AuthInterceptor } from './auth/auth.interceptor'
 
 @NgModule({
   declarations: [
@@ -42,7 +44,14 @@ import {AppEffects} from './store/app.effects'
     EffectsModule.forRoot([AppEffects]),
     NgxMdModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

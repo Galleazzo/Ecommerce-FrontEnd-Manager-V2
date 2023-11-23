@@ -28,7 +28,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    debugger
     if (this.userAuthService.getToken() !== null) {
       const token = this.userAuthService.getToken();
 

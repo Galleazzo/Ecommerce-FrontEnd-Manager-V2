@@ -3,7 +3,7 @@ import {Routes, RouterModule} from '@angular/router'
 import {LayoutComponent} from '../layout/default/layout.component'
 import {DashboardDefaultComponent} from "./dashboard/dashboard-default/dashboard-default.component"
 import {DashboardAnalyticsComponent} from "./dashboard/dashboard-analytics/dashboard-analytics.component"
-import {DashboardCryptoComponent} from "./dashboard/dashboard-crypto/dashboard-crypto.component"
+import { ProductListComponent } from "./dashboard/product/product-list.component"
 import { AuthGuard } from '../auth/auth.guard'
 
 
@@ -31,12 +31,9 @@ const routeForPages = [
         },
       },
       {
-        path: 'crypto',
-        component: DashboardCryptoComponent,
+        path: 'product',
+        component: ProductListComponent,
         canActivate: [AuthGuard],
-        data: {
-          breadcrumb: 'Stocks / Crypto'
-        },
       },
     ],
   },

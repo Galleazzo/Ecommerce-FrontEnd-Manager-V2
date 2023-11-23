@@ -194,6 +194,7 @@ import { AppLogoComponent } from './components/app-logo/app-logo.component'
 import { AppBreadcrumbComponent } from './components/app-breadcrumb/app-breadcrumb.component'
 import { UserAuthService } from '../@youpez/services/user-auth.service'
 import { UserService } from '../@youpez/services/user.service'
+import { ProductService} from '../@youpez/services/product.service'
 
 
 const MainModules = [
@@ -412,7 +413,8 @@ const Pipes = [
     ...Pipes,
   ], providers: [
     UserAuthService,
-    UserService
+    UserService,
+    ProductService
   ],
   exports: [
     ...Components,
