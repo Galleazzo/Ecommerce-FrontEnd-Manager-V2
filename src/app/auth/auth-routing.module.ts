@@ -22,7 +22,7 @@ const routes: Routes = [
     component: AppLayoutDividedComponent,
     children: [
       {
-        path: 'signin',
+        path: 'login',
         component: AuthLoginComponent,
       },
       {
@@ -43,133 +43,7 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'full',
-    component: AppLayoutDividedAltComponent,
-    children: [
-      {
-        path: 'signin',
-        component: AuthLoginComponent,
-      },
-      {
-        path: 'signup',
-        component: AuthSignupComponent,
-      },
-      {
-        path: 'reset-password',
-        component: AuthResetPasswordComponent,
-      },
-      {
-        path: 'forgot-password',
-        component: AuthForgotPasswordComponent,
-      },
-      {
-        path: 'confirmation',
-        component: AuthConfirmationComponent,
-      },
-    ],
-  },
-  {
-    path: 'full-middle',
-    component: AppLayoutDividedFullComponent,
-    children: [
-      {
-        path: 'signin',
-        component: AuthLoginComponent,
-      },
-      {
-        path: 'signup',
-        component: AuthSignupComponent,
-      },
-      {
-        path: 'reset-password',
-        component: AuthResetPasswordComponent,
-      },
-      {
-        path: 'forgot-password',
-        component: AuthForgotPasswordComponent,
-      },
-      {
-        path: 'confirmation',
-        component: AuthConfirmationComponent,
-      },
-    ],
-  },
-  {
-    path: 'basic',
-    component: AppLayoutBasicComponent,
-    children: [
-      {
-        path: 'signin',
-        component: AuthLoginComponent,
-      },
-      {
-        path: 'signup',
-        component: AuthSignupComponent,
-      },
-      {
-        path: 'reset-password',
-        component: AuthResetPasswordComponent,
-      },
-      {
-        path: 'forgot-password',
-        component: AuthForgotPasswordComponent,
-      },
-      {
-        path: 'confirmation',
-        component: AuthConfirmationComponent,
-      },
-    ],
-  },
-  {
-    path: 'book-a-demo',
-    component: AuthBookADemoComponent,
-  },
-  {
-    path: 'coming-soon',
-    children: [
-      {
-        path: 'modern',
-        component: AppLayoutDividedComponent,
-        children: [
-          {
-            path: '',
-            component: ComingSoonComponent,
-          }
-        ]
-      },
-      {
-        path: 'full',
-        component: AppLayoutDividedAltComponent,
-        children: [
-          {
-            path: '',
-            component: ComingSoonComponent,
-          }
-        ]
-      },
-      {
-        path: 'full-middle',
-        component: AppLayoutDividedFullComponent,
-        children: [
-          {
-            path: '',
-            component: ComingSoonComponent,
-          }
-        ]
-      },
-      {
-        path: 'basic',
-        component: AppLayoutBasicComponent,
-        children: [
-          {
-            path: '',
-            component: ComingSoonComponent,
-          }
-        ]
-      },
-    ],
-  },
+  
 ]
 
 @NgModule({

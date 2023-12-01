@@ -10,7 +10,7 @@ export class Product {
     sku: string;
     brand: string;
     category: string;
-    active: boolean;
+    active: any;
     featured: boolean;
     weight: number;
     dimensions: string;

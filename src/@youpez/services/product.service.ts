@@ -20,6 +20,10 @@ export class ProductService {
     return this.httpclient.get<Product[]>(environment.server + `/product/listpage?value=${value}&page=${page}&pageSize=${pageSize}&sort=${sort}&order=${order}`);
   }
 
+  getAllProducts(): Observable<Product[]> {
+    return this.httpclient.get<Product[]>(environment.server + `/product/getAll`);
+  }
+
   public register(registerData) {
     return this.httpclient.post(this.host + '/registerNewUser', registerData);
   }

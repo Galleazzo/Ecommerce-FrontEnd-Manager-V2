@@ -40,23 +40,31 @@ export class AuthLoginComponent implements OnInit {
   onSubmit(loginForm: NgForm) {
     this.userService.login(loginForm.value).subscribe((response: any) => {
         this.userAuthService.setToken(response.token);
+
+        this.notificationService.showToast({
+          type: "info",
+          title: "Seja bem vindo! ✔",
+          subtitle: "Tudo bem com voce? 🥰",
+          target: "#notificationHolder",
+          message: "message",
+          duration: 5000,
+        })
            
         this.router.navigate(['/app/dashboard/default']);
       },(error) => {
-        console.log(error);
+        this.notificationService.showToast({
+          type: "error",
+          title: "Negado ❌",
+          subtitle: "Verifique seu email ou senha de acesso!",
+          target: "#notificationHolder",
+          message: "message",
+          duration: 5000,
+        })
       }
     );
     this.formGroup.markAllAsTouched()
     
-    this.notificationService.showToast({
-      type: "info",
-      title: "Sample toast",
-      subtitle: "Sample subtitle message",
-      caption: "Sample caption",
-      target: "#notificationHolder",
-      message: "message",
-      duration: 2000,
-    })
+    
   }
 
   isValid(name) {
