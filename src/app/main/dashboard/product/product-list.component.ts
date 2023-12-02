@@ -6,6 +6,7 @@ import {ColDef, GridOptions} from "@ag-grid-community/core"
 import { ProductService } from '@youpez/services/product.service'
 import { FormGroup } from '@angular/forms'
 import { Product } from '@youpez/model/Product'
+import { TranslocoService } from '@ngneat/transloco'
 
 
 
@@ -24,7 +25,7 @@ export class ProductListComponent implements OnInit {
 
   public productList: Product[] = [];
 
-  constructor(private http: HttpClient, private productService: ProductService) {
+  constructor(private http: HttpClient, private productService: ProductService, private translocoService: TranslocoService) {
     
   }
 
@@ -102,7 +103,6 @@ export class ProductListComponent implements OnInit {
       rowHeight: 75,
       headerHeight: 40,
       defaultColDef: {
-        editable: true,
         sortable: true,
         resizable: true,
       },

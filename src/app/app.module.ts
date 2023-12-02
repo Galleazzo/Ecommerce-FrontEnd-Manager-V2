@@ -25,7 +25,8 @@ import {environment} from '../environments/environment'
 import {EffectsModule} from '@ngrx/effects'
 import {AppEffects} from './store/app.effects'
 import { AuthGuard } from './auth/auth.guard'
-import { AuthInterceptor } from './auth/auth.interceptor'
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { TranslocoRootModule } from './transloco-root.module'
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AuthInterceptor } from './auth/auth.interceptor'
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects]),
     NgxMdModule.forRoot(),
+    TranslocoRootModule,
   ],
   providers: [
     AuthGuard,

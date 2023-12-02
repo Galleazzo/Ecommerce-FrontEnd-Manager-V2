@@ -2,7 +2,14 @@
   <div class="app-header app-header--carbon">
     <div class="app-productive-heading-04">Table full</div>
   </div>
+  
   <div fxFlex class="relative px-4 pb-4 pt-2">
+    <div style="display: flex; justify-content: end; padding-bottom: 10px;">
+      <button  ibmButton="primary" size="field">
+        {{ 'ADD_PRODUCT' | transloco }}
+        <svg class="bx--btn__icon" ibmIconSave size="20"></svg>
+      </button>
+    </div>
     <ng-container *ngIf="!loading">
       <ag-grid-angular class="app-ag-grid app-border-all" [modules]="modules" [gridOptions]="gridOptions">
       </ag-grid-angular>

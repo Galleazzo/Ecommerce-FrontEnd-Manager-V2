@@ -33,6 +33,7 @@
     "@carbon/themes": "^10.25.0",
     "@ng-bootstrap/ng-bootstrap": "^8.0.1",
     "@ngneat/tailwind": "^1.1.0",
+    "@ngneat/transloco": "^2.23.5",
     "@ngrx/effects": "^10.1.2",
     "@ngrx/entity": "^10.1.2",
     "@ngrx/schematics": "^10.1.2",

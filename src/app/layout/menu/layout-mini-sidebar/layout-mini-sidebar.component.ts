@@ -34,7 +34,7 @@ export class LayoutMiniSidebarComponent implements OnInit {
 
   logout() {
     this.userAuthService.clear();
-    this.router.navigate(['/auth/modern/login'])
+    this.router.navigate(['/auth/login'])
   }
 
 }

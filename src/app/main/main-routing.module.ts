@@ -1,10 +1,11 @@
-import {NgModule} from '@angular/core'
-import {Routes, RouterModule} from '@angular/router'
-import {LayoutComponent} from '../layout/default/layout.component'
-import {DashboardDefaultComponent} from "./dashboard/dashboard-default/dashboard-default.component"
-import {DashboardAnalyticsComponent} from "./dashboard/dashboard-analytics/dashboard-analytics.component"
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { LayoutComponent } from '../layout/default/layout.component'
+import { DashboardDefaultComponent } from "./dashboard/dashboard-default/dashboard-default.component"
+import { DashboardAnalyticsComponent } from "./dashboard/dashboard-analytics/dashboard-analytics.component"
 import { ProductListComponent } from "./dashboard/product/product-list.component"
 import { AuthGuard } from '../auth/auth.guard'
+import { FormProductComponent } from './dashboard/product/add-edit-product/form-product.component'
 
 
 const routeForPages = [
@@ -15,25 +16,30 @@ const routeForPages = [
     },
     children: [
       {
-        path: 'default',
-        component: DashboardDefaultComponent,
+        path: 'default', component: DashboardDefaultComponent,
         canActivate: [AuthGuard],
         data: {
           breadcrumb: 'Default'
         },
       },
       {
-        path: 'analytics',
-        component: DashboardAnalyticsComponent,
+        path: 'analytics', component: DashboardAnalyticsComponent,
         canActivate: [AuthGuard],
         data: {
           breadcrumb: 'Analytics'
         },
       },
       {
-        path: 'product',
-        component: ProductListComponent,
+        path: 'product', component: ProductListComponent,
         canActivate: [AuthGuard],
+        children: [
+          {
+            path: 'add', component: FormProductComponent, canActivate: [AuthGuard],
+          },
+          {
+            path: 'edit:id', component: FormProductComponent, canActivate: [AuthGuard],
+          },
+        ]
       },
     ],
   },
