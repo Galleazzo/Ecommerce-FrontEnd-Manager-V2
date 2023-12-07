@@ -5,9 +5,8 @@
   
   <div fxFlex class="relative px-4 pb-4 pt-2">
     <div style="display: flex; justify-content: end; padding-bottom: 10px;">
-      <button  ibmButton="primary" size="field">
-        {{ 'ADD_PRODUCT' | transloco }}
-        <svg class="bx--btn__icon" ibmIconSave size="20"></svg>
+      <button (click)="newProduct()" ibmButton="primary" size="field">
+        Novo Produto
       </button>
     </div>
     <ng-container *ngIf="!loading">

@@ -7,6 +7,7 @@ import { ProductService } from '@youpez/services/product.service'
 import { FormGroup } from '@angular/forms'
 import { Product } from '@youpez/model/Product'
 import { TranslocoService } from '@ngneat/transloco'
+import { Router } from '@angular/router'
 
 
 
@@ -25,7 +26,7 @@ export class ProductListComponent implements OnInit {
 
   public productList: Product[] = [];
 
-  constructor(private http: HttpClient, private productService: ProductService, private translocoService: TranslocoService) {
+  constructor(private http: HttpClient, private productService: ProductService, private router: Router) {
     
   }
 
@@ -110,5 +111,9 @@ export class ProductListComponent implements OnInit {
       paginationPageSize: 10,
       groupSelectsChildren: true,
     }
+  }
+
+  newProduct() {
+    this.router.navigate(["/app/dashboards/product/add"])
   }
 }

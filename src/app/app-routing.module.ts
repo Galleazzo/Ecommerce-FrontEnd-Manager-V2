@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'auth/modern/login',
+    redirectTo: 'auth/login',
     pathMatch: 'full',
   },
 ]
